@@ -1,0 +1,149 @@
+.catalogo-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.catalogo-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.filtros {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.filtros-superiores {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.busqueda-input {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 300px;
+}
+
+.ordenar-select,
+.categoria-select {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.producto-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.producto-imagen {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stock-bajo,
+.sin-stock {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.stock-bajo {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.sin-stock {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.producto-info {
+    padding: 1rem;
+}
+
+.producto-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.precio {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2c5282;
+    margin: 0.5rem 0;
+}
+
+.descripcion {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.producto-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.no-productos {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .filtros-superiores {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .busqueda-input {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+} 
