@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Tienda Online</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Registro - Faustino</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
     <style>
         body {
             background: #f4f6fa;
+            margin: 0;
+            padding: 0;
         }
-        .header {
+        .navbar {
             background: #282c34;
             color: white;
             padding: 0;
+            width: 100vw;
         }
         .nav-menu {
             display: flex;
@@ -59,21 +62,24 @@
             align-items: flex-start;
             min-height: 60vh;
         }
-        .login-container {
+        .register-container {
             background: white;
-            border-radius: 16px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-radius: 20px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.12);
             padding: 2.5rem 2rem 2rem 2rem;
             margin-top: 2rem;
             width: 100%;
             max-width: 370px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .logo-faustino-login {
             display: block;
             margin: 0 auto 1.5rem auto;
             height: 60px;
         }
-        .login-container h2 {
+        .register-container h2 {
             text-align: center;
             margin-bottom: 2rem;
             color: #282c34;
@@ -81,19 +87,11 @@
             font-weight: bold;
         }
         .input-icon-group {
-            display: flex;
-            align-items: center;
+            width: 100%;
             background: #e3e6f6;
             border-radius: 10px;
             padding: 0.5rem 1rem;
             margin-bottom: 1.2rem;
-        }
-        .input-icon-group svg {
-            width: 22px;
-            height: 22px;
-            margin-right: 0.7rem;
-            color: #282c34;
-            flex-shrink: 0;
         }
         .input-icon-group input {
             border: none;
@@ -107,19 +105,7 @@
         .input-icon-group input::placeholder {
             color: #6b7280;
         }
-        .forgot-link {
-            display: block;
-            text-align: right;
-            margin-bottom: 1.5rem;
-            color: #282c34;
-            font-size: 0.97rem;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .forgot-link:hover {
-            color: #4299e1;
-        }
-        .login-button {
+        .register-button {
             width: 100%;
             padding: 1rem;
             background-color: #282c34;
@@ -132,54 +118,56 @@
             margin-bottom: 1.2rem;
             transition: background 0.2s;
         }
-        .login-button:hover {
+        .register-button:hover {
             background-color: #4299e1;
         }
-        .register-link {
+        .login-link {
             text-align: center;
             color: #282c34;
             font-size: 1rem;
         }
-        .register-link a {
+        .login-link a {
             color: #282c34;
             font-weight: bold;
             text-decoration: none;
         }
-        .register-link a:hover {
+        .login-link a:hover {
             color: #4299e1;
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav-menu">
-            <a href="index.html" class="logo">Faustino</a>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="nav-menu">
+            <a href="#" class="logo">Faustino</a>
+        </div>
+    </nav>
     <div class="main-bg">
         <h1 class="bienvenido-title">Bienvenido</h1>
         <div class="login-center">
-            <div class="login-container">
-                <img src="cliente/catalogo/logo-faustino.png" alt="Logo Faustino" class="logo-faustino-login">
-                <h2>Iniciar sesión</h2>
-                <form id="loginForm">
-                    <div class="input-icon-group" style="background:#e3e6f6;">
-                        <input type="text" id="usuario" name="usuario" placeholder="Usuario" required style="border:none;background:transparent;outline:none;font-size:1rem;width:100%;padding:0.7rem 0;color:#282c34;">
+            <div class="register-container">
+                <img src="../catalogo/logo-faustino.png" alt="Logo Faustino" class="logo-faustino-login">
+                <h2>Crear Cuenta</h2>
+                <form id="registerForm">
+                    <div class="input-icon-group">
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" required>
                     </div>
-                    <div class="input-icon-group" style="background:#f7f7fa;">
-                        <input type="password" id="password" name="password" placeholder="Contraseña" required style="border:none;background:transparent;outline:none;font-size:1rem;width:100%;padding:0.7rem 0;color:#282c34;">
+                    <div class="input-icon-group">
+                        <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
                     </div>
-                    <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
-                    <button type="submit" class="login-button">Iniciar sesión</button>
+                    <div class="input-icon-group">
+                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    </div>
+                    <div class="input-icon-group">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmar Contraseña" required>
+                    </div>
+                    <button type="submit" class="register-button">Crear Cuenta</button>
                 </form>
-                <div class="register-link">
-                    No tenés una cuenta? - <a href="cliente/registro/index.html">Registrate</a>
-                </div>
             </div>
         </div>
     </div>
-    <script src="assets/js/utils.js"></script>
-    <script src="cliente/login/login.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <script src="registro.js"></script>
 </body>
 </html> 

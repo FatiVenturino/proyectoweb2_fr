@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Faustino</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        body {
+            background: #f4f6fa;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .perfil-container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 2.5rem 2rem 2rem 2rem;
+        }
+        .perfil-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .perfil-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #f4f6fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #444;
+            margin-right: 1.5rem;
+            position: relative;
+        }
+        .perfil-avatar .camera-icon {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: #fff;
+            border-radius: 50%;
+            padding: 2px;
+            font-size: 1rem;
+            color: #888;
+            border: 1px solid #eee;
+        }
+        .perfil-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .perfil-info .nombre {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #222;
+        }
+        .perfil-info .email {
+            color: #666;
+            font-size: 1rem;
+        }
+        .perfil-section {
+            display: flex;
+            align-items: flex-start;
+            padding: 1.2rem 0 1.2rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .perfil-section:last-child {
+            border-bottom: none;
+        }
+        .perfil-section-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #f4f6fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #282c34;
+        }
+        .perfil-section-content {
+            flex: 1;
+        }
+        .perfil-section-title {
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 0.2rem;
+        }
+        .perfil-section-desc {
+            color: #888;
+            font-size: 1rem;
+        }
+        .perfil-section-arrow {
+            color: #bbb;
+            font-size: 1.3rem;
+            align-self: center;
+        }
+        @media (max-width: 700px) {
+            .perfil-container {
+                max-width: 98vw;
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-menu">
+            <a href="catalogo/index.html" class="logo">
+                <img src="catalogo/logo-faustino.png" alt="Logo Faustino" class="logo-faustino-header" style="height: 48px; width: auto; margin-right: 10px; vertical-align: middle;">
+                <span class="nombre-faustino-header" style="font-size: 2rem; font-weight: bold; vertical-align: middle;">FAUSTINO</span>
+            </a>
+            <div class="nav-links">
+                <a href="catalogo/index.html">Catálogo</a>
+                <a href="carrito/index.html">Carrito</a>
+                <a href="pedidos/index.html">Mis Pedidos</a>
+                <a href="perfil.html">Mi Perfil</a>
+            </div>
+        </nav>
+    </header>
+    <div class="perfil-container">
+        <div class="perfil-header">
+            <div class="perfil-avatar">MV
+            </div>
+            <div class="perfil-info">
+                <span class="nombre">Maria De Fatima Venturino Fedullo</span>
+                <span class="email">fati1.ven@gmail.com</span>
+            </div>
+        </div>
+        <div class="perfil-section">
+            <div class="perfil-section-content" style="margin-left:0;">
+                <div class="perfil-section-title">Datos de tu cuenta</div>
+                <div class="perfil-section-desc">Datos guardados en tu cuenta</div>
+            </div>
+            <div class="perfil-section-arrow">&#8250;</div>
+        </div>
+        <div class="perfil-section">
+            <div class="perfil-section-content" style="margin-left:0;">
+                <div class="perfil-section-title">Tarjetas</div>
+                <div class="perfil-section-desc">Tarjetas guardadas en tu cuenta.</div>
+            </div>
+            <div class="perfil-section-arrow">&#8250;</div>
+        </div>
+        <div class="perfil-section">
+            <div class="perfil-section-content" style="margin-left:0;">
+                <div class="perfil-section-title">Direcciones</div>
+                <div class="perfil-section-desc">Direcciones guardadas en tu cuenta.</div>
+            </div>
+            <div class="perfil-section-arrow">&#8250;</div>
+        </div>
+    </div>
+</body>
+</html> 

@@ -146,4 +146,24 @@
     .productos-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
+}
+
+.logo-faustino-header {
+    height: 40px;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+.nombre-faustino-header {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+    vertical-align: middle;
+}
+
+/* Eliminar estilos de .catalogo-header y relacionados si ya no se usan */
+.catalogo-header, .logo-faustino, .nombre-faustino {
+    display: none !important;
 } 
