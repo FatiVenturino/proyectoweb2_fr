@@ -39,12 +39,14 @@ const noProductos = document.getElementById('no-productos');
 // Cargar categorías únicas en el select
 function cargarCategorias() {
     const categorias = [...new Set(productos.map(p => p.categoria))];
-    categorias.forEach(categoria => {
-        const option = document.createElement('option');
-        option.value = categoria;
-        option.textContent = categoria;
-        categoriaSelect.appendChild(option);
-    });
+    categorias
+        .filter(categoria => !['Hogar', 'Ropa', 'Electrónicos', 'Electronica', 'Electrónica'].includes(categoria))
+        .forEach(categoria => {
+            const option = document.createElement('option');
+            option.value = categoria;
+            option.textContent = categoria;
+            categoriaSelect.appendChild(option);
+        });
 }
 
 // Crear tarjeta de producto
