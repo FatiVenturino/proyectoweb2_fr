@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis pedidos</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="pedidos.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-menu">
+            <a href="../../index.html" class="logo">
+                <img src="../catalogo/logo-faustino.png" alt="Logo Faustino" class="logo-faustino-header">
+                <span class="nombre-faustino-header">Faustino</span>
+            </a>
+            <div class="nav-links">
+                <a href="../catalogo/index.html">Catálogo</a>
+                <a href="../carrito/index.html">Carrito</a>
+                <a href="../pedidos/index.html" class="activo">Mis Pedidos</a>
+                <a href="../perfil.html">Mi Perfil</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1 class="titulo">Mis pedidos</h1>
+        <div class="ordenar">
+            <label for="ordenar">Ordenar por:</label>
+            <select id="ordenar">
+                <option value="fecha">fecha</option>
+                <option value="estado">estado</option>
+            </select>
+        </div>
+        <section class="historial-lista">
+            <!-- Ejemplo de pedido -->
+            <div class="compra">
+                <div class="compra-fecha">9 de mayo de 2023</div>
+                <div class="compra-detalle">
+                    <img src="../catalogo/logo-faustino.png" alt="Producto" class="compra-img">
+                    <div class="compra-info">
+                        <span class="entregado">Entregado</span>
+                        <span class="llego">Llegó el 17 de mayo</span>
+                        <p class="descripcion">Disco Sólido Interno Kingston Snv2s/500g 500gb Azul<br>1 unidad</p>
+                    </div>
+                    <div class="compra-acciones">
+                        <button class="ver-compra">Ver pedido</button>
+                        <button class="volver-comprar">Volver a comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="compra">
+                <div class="compra-fecha">26 de julio de 2023</div>
+                <div class="compra-detalle">
+                    <img src="../catalogo/logo-faustino.png" alt="Producto" class="compra-img">
+                    <div class="compra-info">
+                        <span class="entregado">Entregado</span>
+                        <span class="llego">Llegó el 31 de julio</span>
+                        <p class="descripcion">Memoria Ram ValueRam Color Verde 16gb 1 Kingston Kvr26s19s8/16<br>1 unidad</p>
+                    </div>
+                    <div class="compra-acciones">
+                        <button class="ver-compra">Ver pedido</button>
+                        <button class="volver-comprar">Volver a comprar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html> 
