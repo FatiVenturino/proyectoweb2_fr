@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Admin - Faustino</title>
+    <link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-menu">
+            <a href="index.html" class="logo">
+                <img src="../../cliente/catalogo/logo-faustino.png" alt="Logo Faustino" class="logo-faustino-header">
+                <span class="nombre-faustino-header">Faustino Admin</span>
+            </a>
+            <div class="nav-links">
+                <a href="../catalogo/index.html" class="activo">Catálogo</a>
+                <a href="../carrito/index.html">Carrito</a>
+                <a href="../pedidos/index.html">Pedidos</a>
+                <a href="../perfil/index.html">Mi Perfil</a>
+            </div>
+        </nav>
+    </header>
+    <main class="catalogo-container">
+        <h2>Gestión de Productos</h2>
+        <button onclick="window.location.href='agregar.html'">Agregar Producto</button>
+        <table class="tabla-productos">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-productos-body">
+                <!-- Productos cargados por JS -->
+            </tbody>
+        </table>
+        <h2>Otras Funcionalidades</h2>
+        <ul>
+            <li><a href="../pedidos/index.html">Gestión de Pedidos</a></li>
+            <li><a href="../clientes/index.html">Gestión de Clientes</a></li>
+            <li><a href="../reportes/index.html">Reportes de Ventas</a></li>
+            <li><a href="../promociones/index.html">Promociones y Ofertas</a></li>
+        </ul>
+    </main>
+    <script src="catalogo.js"></script>
+</body>
+</html> 

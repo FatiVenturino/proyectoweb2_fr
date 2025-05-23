@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto - Faustino Admin</title>
+    <link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-menu">
+            <a href="index.html" class="logo">
+                <img src="../../cliente/catalogo/logo-faustino.png" alt="Logo Faustino" class="logo-faustino-header">
+                <span class="nombre-faustino-header">Faustino Admin</span>
+            </a>
+        </nav>
+    </header>
+    <main class="catalogo-container">
+        <h2>Agregar Producto</h2>
+        <form id="form-agregar-producto">
+            <label>Nombre:</label>
+            <input type="text" name="nombre" required><br>
+            <label>Precio:</label>
+            <input type="number" name="precio" required><br>
+            <label>Descripción:</label>
+            <textarea name="descripcion" required></textarea><br>
+            <label>Imagen (URL o ruta):</label>
+            <input type="text" name="imagen" required><br>
+            <label>Categoría:</label>
+            <input type="text" name="categoria" required><br>
+            <button type="submit">Agregar</button>
+        </form>
+    </main>
+    <script src="agregar.js"></script>
+</body>
+</html> 
