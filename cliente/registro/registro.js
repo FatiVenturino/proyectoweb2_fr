@@ -1,4 +1,4 @@
-document.getElementById('registerForm').addEventListener('submit', function(e) {
+document.getElementById('registerForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     // Validar que los campos no estén vacíos
     const nombre = document.getElementById('nombre').value;
@@ -14,6 +14,25 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
         alert('Las contraseñas no coinciden');
         return;
     }
-    // Redirigir directamente al catálogo
-    window.location.href = '../catalogo/index.html';
+
+    try {
+        const response = await fetch('http://localhost:4000/api/auth/registro', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nombre, email, password })
+        });
+        const data = await response.json();
+        if (response.ok && data.data && data.data.token) {
+            // Guardar token y usuario en localStorage
+            localStorage.setItem('token', data.data.token);
+            localStorage.setItem('userId', data.data.usuario.id);
+            localStorage.setItem('userName', data.data.usuario.nombre);
+            // Redirigir al catálogo
+            window.location.href = '../catalogo/index.html';
+        } else {
+            alert(data.message || 'Error al registrar usuario');
+        }
+    } catch (error) {
+        alert('Error al registrar usuario. Intenta nuevamente.');
+    }
 }); 

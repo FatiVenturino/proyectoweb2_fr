@@ -69,8 +69,7 @@ function crearProductoCard(producto) {
     // Agregar event listeners a los botones
     const btnVerDetalles = card.querySelector('.btn-ver-detalles');
     btnVerDetalles.addEventListener('click', () => {
-        // TODO: Implementar vista de detalles
-        console.log('Ver detalles:', producto.id);
+        window.location.href = `http://localhost:4000/cliente/detalle.html?id=${producto.id}`;
     });
 
     const btnAgregarCarrito = card.querySelector('.btn-agregar-carrito');

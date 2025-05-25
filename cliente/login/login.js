@@ -1,33 +1,36 @@
 document.getElementById('loginForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const usuario = document.getElementById('usuario').value;
+    const email = document.getElementById('usuario').value;
     const password = document.getElementById('password').value;
 
-    if (!usuario || !password) {
+    if (!email || !password) {
         alert('Por favor, completa todos los campos.');
         return;
     }
     // Lógica para admin
-    if (usuario === 'admin' && password === 'admin') {
+    if (email === 'admin' && password === 'admin') {
         window.location.href = '../../admin/catalogo/index.html';
         return;
     }
-    // Validar usuario contra el backend
+    // Login real contra el backend
     try {
-        const response = await fetch('http://localhost:4000/api/auth/validar-usuario', {
+        const response = await fetch('http://localhost:4000/api/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ usuario })
+            body: JSON.stringify({ email, password })
         });
         const data = await response.json();
-        if (data.existe) {
+        if (response.ok && data.data && data.data.token) {
+            // Guardar token y usuario en localStorage
+            localStorage.setItem('token', data.data.token);
+            localStorage.setItem('userId', data.data.usuario.id);
+            localStorage.setItem('userName', data.data.usuario.nombre);
+            // Redirigir al catálogo
             window.location.href = '../catalogo/index.html';
         } else {
-            if (confirm('Usuario desconocido. ¿Deseas crear un usuario nuevo?')) {
-                window.location.href = '../registro/index.html';
-            }
+            alert(data.message || 'Email o contraseña incorrectos');
         }
     } catch (error) {
-        alert('Error al validar usuario. Intenta nuevamente.');
+        alert('Error al iniciar sesión. Intenta nuevamente.');
     }
 }); 
