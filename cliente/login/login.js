@@ -25,6 +25,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
             localStorage.setItem('token', data.data.token);
             localStorage.setItem('userId', data.data.usuario.id);
             localStorage.setItem('userName', data.data.usuario.nombre);
+            localStorage.setItem('userRol', data.data.usuario.rol);
             // Redirigir al catálogo
             window.location.href = '../catalogo/index.html';
         } else {

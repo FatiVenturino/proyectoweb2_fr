@@ -16,10 +16,12 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     }
 
     try {
+        const direccion = ""; // Campo vacío por ahora
+        const telefono = ""; // Campo vacío por ahora
         const response = await fetch('http://localhost:4000/api/auth/registro', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nombre, email, password })
+            body: JSON.stringify({ nombre, email, password, direccion, telefono })
         });
         const data = await response.json();
         if (response.ok && data.data && data.data.token) {
@@ -27,6 +29,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
             localStorage.setItem('token', data.data.token);
             localStorage.setItem('userId', data.data.usuario.id);
             localStorage.setItem('userName', data.data.usuario.nombre);
+            localStorage.setItem('userRol', data.data.usuario.rol);
             // Redirigir al catálogo
             window.location.href = '../catalogo/index.html';
         } else {

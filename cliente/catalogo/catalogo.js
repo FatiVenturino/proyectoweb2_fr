@@ -172,6 +172,19 @@ categoriaSelect.addEventListener('change', actualizarProductos);
 async function inicializar() {
     await cargarCategorias();
     await actualizarProductos();
+
+    // Mostrar funciones de admin si corresponde
+    const userRol = localStorage.getItem('userRol');
+    if (userRol === 'admin') {
+        // Ejemplo: mostrar botón de agregar producto
+        const btnAgregar = document.createElement('button');
+        btnAgregar.textContent = 'Agregar producto';
+        btnAgregar.className = 'btn btn-warning';
+        btnAgregar.onclick = () => {
+            window.location.href = '/admin/catalogo/agregar.html';
+        };
+        document.querySelector('main').prepend(btnAgregar);
+    }
 }
 
 inicializar(); 
